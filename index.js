@@ -16,7 +16,7 @@ app.use("/posts", postRoutes);
 app.use("/", (req, res) => {
   res.send("Welcome to Memories API");
 });
-const CONNECTION_URL = process.env.MONGODB_CONNECTION_STRING;
+const CONNECTION_URL = process.env ? process.env.MONGODB_CONNECTION_STRING : "";
 const PORT = process.env.PORT || 5000;
 
 mongoose
